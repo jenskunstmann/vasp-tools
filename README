@@ -1,0 +1,73 @@
+********************************
+******** VASP TOOLS ************
+********************************
+Version: 0.5 (12.11.2018)
+
+witten by 
+Jens Kunstmann
+TU Dresden, Theoretical Chemistry
+01062 Dresden, Germany
+
+e-mail: jens@j-kunstmann.de
+
+
+Description
+-----------
+The VASP TOOLS do not provide black box usage but rather require the user
+to be familiar with MATLAB. The data of VASP is usually read from the VASP 
+output files and stored in a big array. The user has the ability to pick 
+from that array the data he is interested in, manipulate it, and finally 
+plot it. This is not very user friendly but provides the flexibility 
+one needs when working on scientific problems.
+
+When plotting complex data one usually has to set a number of different 
+parameters, like filenames, K-point labels, the energy window for plotting, 
+etc. These parameters usually change from system to system. Setting these 
+parameters by hand in all programs you use becomes very cumbersome the more 
+systems you study and is also a major source of errors. Therefore VASP 
+TOOLS uses a system database file 'vasp__sysDataBase.m' where the parameters
+of all systems are saved and used automatically. The only thing one has to
+do is to specify which system of the system database you are studying. This 
+is done in 'vasp_Start.m'
+
+
+Before you start
+-----------------
+Make sure that the drawers 'vasp_tools' and 'crystal_tools' are in the 
+Matlab search path. To add them to the searchpath run in the Command Window
+> pathtool
+
+
+How to use VASP TOOLS?
+-----------------------
+
+1. Define an entry for your system in the system database file 
+'vasp__sysDataBase.m' (see this file for more explanations).
+
+2. Set the SYS_ID in 'vasp_Start.m' that corresponds to the entry in the 
+system database you want to examine and run it.
+>> vasp_Start
+
+3. run one of the VASP TOOLS
+>> vasp_*****
+
+
+Files and Filenames
+-------------------
+
+All files having filenames starting with 'vasp_' 
+(only one underscore character) are main programs that you can run by just 
+typing the program name. 
+examples: 
+>> vasp_Start
+>> vasp_PlotDOS
+>> vasp_PlotPlainBands
+etc.
+
+All files start with 'vasp__', (two underscore characters) are functions 
+that are called by the main programs. They are, if you want, internal 
+functions not to be run by the end user.
+examples:
+  vasp__readEIGENVAL
+  vasp__getEFermi
+etc.
