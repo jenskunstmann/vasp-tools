@@ -12,7 +12,13 @@ e-mail: jens@j-kunstmann.de
 
 Description
 -----------
-The VASP TOOLS do not provide black box usage but rather require the user
+The VASP TOOLS allow you to plot plain and projected band structures, 
+plain and projected density of states, analyze the atomic structure,
+find nearest neighbors, calculate optical selection rules, change the
+atomic structure, convert the atomic structure to other formats and 
+much more.
+
+VASP TOOLS do not provide black box usage but rather require the user
 to be familiar with MATLAB. The data of VASP is usually read from the VASP 
 output files and stored in a big array. The user has the ability to pick 
 from that array the data she/he is interested in, manipulate it, and finally 
