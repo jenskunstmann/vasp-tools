@@ -16,7 +16,7 @@ Description
 The VASP TOOLS do not provide black box usage but rather require the user
 to be familiar with MATLAB. The data of VASP is usually read from the VASP 
 output files and stored in a big array. The user has the ability to pick 
-from that array the data he is interested in, manipulate it, and finally 
+from that array the data she/he is interested in, manipulate it, and finally 
 plot it. This is not very user friendly but provides the flexibility 
 one needs when working on scientific problems.
 

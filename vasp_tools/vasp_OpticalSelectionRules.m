@@ -62,32 +62,3 @@ for vb = vb_list
         disp([vb, cb, polariz, p_plus_squ, p_minus_squ, p_x_squ, p_y_squ, p_z_squ])
     end
 end
-
-
-% Tomasz code, gives identical results
-% % p0 = 2.58 + 1.99i;     % monolayer MoSe2 VB->CB Px, for relative values
-% p0 = 1;                 % for absolute values
-% 
-% e_plus=1/sqrt(2)*[1, 1i, 0];  e_minus=1/sqrt(2)*[1, -1i, 0];  z=[0, 0, 1];  % polarization versors
-% 
-% count=0;
-% for j = 1:length(cb)
-%     for i = 1:length(vb)
-%         count=count+1;
-%         p =  [P(cb(j),vb(i),1), P(cb(j),vb(i),2), P(cb(j),vb(i),3)];   % p(c,v) = conj(p(v,c))
-%         
-%         % Yu et al 2018 2D Mater. 5 035021 
-%         red = sqrt((p * e_plus.' * conj(p * e_plus.')) / (p0*conj(p0)));      % |e+*Pcv|/p0     
-%         blue = sqrt((p * e_minus.' * conj(p * e_minus.')) / (p0*conj(p0)));   % |e-*Pcv|/p0
-%         black = sqrt((p * z.' * conj(p * z.')) / (p0*conj(p0)));              % |z*Pcv|/p0
-% 
-%         % Jens' code
-%         P_plus = (p(1) + 1i*p(2))/sqrt(2); P_min  = (p(1) - 1i*p(2))/sqrt(2);
-%         P_plus_int = P_plus * conj(P_plus); P_min_int = P_min * conj(P_min);
-%         polariz = (P_plus_int - P_min_int)/(P_plus_int + P_min_int);
-%         
-%         %out(count,:)=[real(vb(i)), real(cb(j)), p, real(red), real(blue), real(black), real(polariz)];
-%         [real(vb(i)), real(cb(j)), real(red), real(blue), real(black), real(polariz)]
-%     end
-% end
-
